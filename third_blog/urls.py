@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('comment/', include('comments.urls')),
+    path('wiki/', include('wiki.urls')),
 
     path('mdeditor/', include('mdeditor.urls'))
 ]
