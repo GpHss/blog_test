@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '@mrv&-yz#qxp&k*lt+qy1+)7pzhitg54r-ah2g8!%l3r8d!e=r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '47.94.9.113']
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '47.94.9.113']
 INSTALLED_APPS = [
     'blog',
     'comments',
+    'wiki',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,8 +56,7 @@ ROOT_URLCONF = 'third_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

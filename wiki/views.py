@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+from blog.models import Post, Category
 
 
 def index(request):
-    return HttpResponse('这是wiki主页')
+    categorys = Category.objects.all()
+    context = {
+        'categorys': categorys,
+    }
+    return render(request, 'wiki/index.html', context=context)

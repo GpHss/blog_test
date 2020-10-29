@@ -22,7 +22,6 @@ def detail(request, pk):
         'markdown.extensions.extra',
         'markdown.extensions.codehilite',
         'markdown.extensions.toc',
-        'mdx_math',
         TocExtension(slugify=slugify),
     ])
     post.body = md.convert(post.body)

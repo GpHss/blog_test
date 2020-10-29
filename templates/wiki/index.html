@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{# 正文 #}
+{% block main %}
+<div class="col-lg-8">
+    <table class="table table-hover">
+        <thead>
+            <th>#</th>
+            <th>类别</th>
+        </thead>
+        <tbody>
+            {% for category in categorys %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'blog:category' category.id %}">{{ category.name }}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock main %}
