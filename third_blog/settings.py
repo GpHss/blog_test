@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'blog',
     'comments',
     'wiki',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,10 +82,6 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'root',
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': 'db.sqlite3',
-    # }
 }
 
 # Password validation
