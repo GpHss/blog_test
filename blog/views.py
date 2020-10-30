@@ -56,13 +56,3 @@ def tag(request, tid):
     post_list = tag.post_set.all()
     # post_list = Post.objects.filter(tags=tag).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
-
-
-class WikiView(View):
-    """
-    功能描述：
-    将某些具体的文章整合到一起, 以列表的形式展示, 便于查阅, 而不是从具体的某个分类里查找
-    """
-
-    def get(self, request):
-        return HttpResponse("wiki_index")

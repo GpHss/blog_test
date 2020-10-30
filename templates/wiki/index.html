@@ -2,20 +2,20 @@
 
 {# 正文 #}
 {% block main %}
-<div class="col-lg-8">
-    <table class="table table-hover">
-        <thead>
+    <div class="col-md-8">
+        <table class="table table-hover">
+            <thead>
             <th>#</th>
             <th>类别</th>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             {% for category in categorys %}
-            <tr>
-                <td>{{ forloop.counter }}</td>
-                <td><a href="{% url 'blog:category' category.id %}">{{ category.name }}</a></td>
-            </tr>
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td><a href="{% url 'wiki:detail' cid=category.id %}">{{ category.name }}</a></td>
+                </tr>
             {% endfor %}
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 {% endblock main %}
