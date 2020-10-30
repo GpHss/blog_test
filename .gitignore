@@ -6,3 +6,5 @@
 /venv/
 
 /.idea
+
+/third_blog/__init__.py
