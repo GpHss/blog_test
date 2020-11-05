@@ -2,7 +2,6 @@ import markdown
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.html import strip_tags
-from django.db.models.manager import Manager
 
 
 class Category(models.Model):
@@ -29,13 +28,14 @@ class Post(models.Model):
     title = models.CharField('标题', max_length=255)
     body = models.TextField('内容')
 
-    created_time = models.DateTimeField('创建时间', auto_now=True)
-    # 多对多关系会新建一张表, 每一行会存储对应的两个数据间的关系
-    modified_time = models.DateTimeField('修改时间', auto_now_add=True)
+    created_time = models.DateTimeField('创建时间', auto_now_add=True)
+    modified_time = models.DateTimeField('修改时间', auto_now=True)
 
     excerpt = models.CharField('摘要', max_length=255, blank=True)
 
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='分类')
+
+    # 多对多关系会新建一张表, 每一行会存储对应的两个数据间的关系
     tags = models.ManyToManyField('Tag', blank=True, verbose_name='标签')
 
     class Meta:
