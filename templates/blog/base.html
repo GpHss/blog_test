@@ -91,81 +91,79 @@
 </head>
 
 <body>
-    {# 顶部导航栏 #}
-    <div class="container">
-        <header id="site-header">
-            <div class="row">
-                <div class="col-md-4 col-sm-5 col-xs-8">
-                    <div class="logo">
-                        <h1><a href="{% url 'blog:index' %}"><b>Black</b> &amp; White</a></h1>
-                    </div>
-                </div><!-- col-md-4 -->
-                <div class="col-md-8 col-sm-7 col-xs-4">
-                    <nav class="main-nav" role="navigation">
-                        <div class="navbar-header">
-                            <button type="button" id="trigger-overlay" class="navbar-toggle">
-                                <span class="ion-navicon"></span>
-                            </button>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
-                                <li class="cl-effect-11"><a href="{% url 'wiki:index' %}"
-                                        data-hover="Wiki知识库">Wiki知识库</a>
-                                </li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </nav>
-                </div><!-- col-md-8 -->
-            </div>
-        </header>
-        {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                    aria-hidden="true">&times;</span></button>
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-    </div>
-
-    <div class="content-body">
-        <div class="container">
-            <div class="row">
-                {# 正文 #}
-                {% block main %}
-                {% endblock main %}
-                {# 侧边栏 #}
-                {% block aside %}
-                {% endblock aside %}
-            </div>
-        </div>
-    </div>
-
-    <footer id="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p></p>
+{# 顶部导航栏 #}
+<div class="container">
+    <header id="site-header">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 col-xs-8">
+                <div class="logo">
+                    <h1><a href="{% url 'blog:index' %}"><b>Black</b> &amp; White</a></h1>
                 </div>
+            </div><!-- col-md-4 -->
+            <div class="col-md-8 col-sm-7 col-xs-4">
+                <nav class="main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'wiki:index' %}"
+                                                        data-hover="Wiki知识库">Wiki知识库</a>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div><!-- col-md-8 -->
+        </div>
+    </header>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            {# 正文 #}
+            {% block main %}
+            {% endblock main %}
+            {# 侧边栏 #}
+            {% block aside %}
+            {% endblock aside %}
+        </div>
+    </div>
+</div>
+
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p></p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
 
-    <script src="{% static 'blog/js/script.js' %}"></script>
+<script src="{% static 'blog/js/script.js' %}"></script>
 
-    <body>
-        <script src="https://cdn.bootcss.com/highlight.js/10.0.0/highlight.min.js"></script>
-        <script
-            src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
-        <script>
-            hljs.initHighlightingOnLoad();
-            hljs.initLineNumbersOnLoad();
-        </script>
-    </body>
+<script src="https://cdn.bootcss.com/highlight.js/10.0.0/highlight.min.js"></script>
+<script
+        src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
 </body>
 
 </html>
