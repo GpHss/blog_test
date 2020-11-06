@@ -17,7 +17,8 @@
                     <td>{{ forloop.counter }}</td>
                     <td><a href="{% url 'blog:detail' pk=post.id %}">{{ post.title }}</a></td>
                     <td>{{ post.comment_set.count }}</td>
-                    <td>{{ post.created_time }}</td>
+                    {# 修改时间, auto_now #}
+                    <td>{{ post.modified_time }}</td>
                 </tr>
             {% endfor %}
             </tbody>
