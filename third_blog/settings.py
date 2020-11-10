@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '47.94.9.113']
 # Application definition
 
 INSTALLED_APPS = [
+    'simpleui',
     'blog',
     'comments',
     'wiki',
@@ -119,4 +120,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static', ]
